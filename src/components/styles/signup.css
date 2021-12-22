@@ -1,0 +1,48 @@
+.signUpContainer {
+    text-align: center;
+    color: white;
+    background-color: #282c34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.labelContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: gray;
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 35rem;
+    width: 60%;
+    color: white;
+    font-size: 18px;
+}
+
+.button{
+    border-radius: 4px;
+    background: #256ce1;
+    padding: 10px 22px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin-left: 24px;
+}
+.addButton{
+    border-radius: 4px;
+    background: red;
+    padding: 10px 22px;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    margin-left: 24px;
+}

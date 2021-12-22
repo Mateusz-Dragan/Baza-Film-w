@@ -1,0 +1,28 @@
+.movie {
+    flex-basis: 25%;
+    border: 2px solid gray;
+    overflow: fragments;
+    margin: 15px;
+    display: flex;
+    border-radius: 2%;
+    background-color: #333;
+    transition: transform .2s;
+    height: 330px;
+    text-decoration: none;
+}
+
+.movieContainer {
+    padding: 15px;
+}
+
+.movieTitle {
+    text-align: left;
+    font-size: 21px;
+    color: white;
+    font-weight: 700;
+}
+
+.description {
+    text-align: left;
+    color: white;
+}

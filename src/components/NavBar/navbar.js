@@ -1,28 +1,16 @@
 import React from 'react';
-import {
-    Nav,
-    NavLink,
-    Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink
-} from './NavbarElements';
-import Search from "../search";
+import "./navbar.css"
+import Search from "./NavBar elements/search";
+import Logo from "./NavBar elements/logo";
+import Signup from "./NavBar elements/signup";
 
 const Navbar = () => {
     return (
-        <>
-            <Nav>
-                <NavLink to='/'>
-                    <h1>Movie Page</h1>
-                </NavLink>
-                <Bars/>
-                    <Search/>
-                <NavBtn>
-                    <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-                </NavBtn>
-            </Nav>
-        </>
+        <div className="container">
+            <Logo/>
+            <Search/>
+            <Signup/>
+        </div>
     );
 };
 
