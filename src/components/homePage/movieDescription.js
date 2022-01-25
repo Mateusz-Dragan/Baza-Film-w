@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../homePage/styles/movieStyles.css'
 
-function MovieDescription() {
+class MovieDescription extends Component {
 
-
+    render(){
         return (<div className="movieContainer">
-            <div className="movieTitle">Random Movie</div>
+            <div className="movieTitle">{this.props.title}</div>
             <br/>
-            <div className="description"> Random movie please ignore this message.
+            <div className="description"> {this.props.content}
             </div>
         </div>);
+    }
+
 
 
 }

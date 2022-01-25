@@ -2,14 +2,21 @@ import React from 'react';
 import "./navbar.css"
 import Search from "./NavBar elements/search";
 import Logo from "./NavBar elements/logo";
-import Signup from "./NavBar elements/signup";
+import SignupBtn from "./NavBar elements/signupBtn";
+import LogoutBtn from "./NavBar elements/logoutBtn";
+import { isExpired, decodeToken  } from "react-jwt";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+    const user = decodeToken(localStorage.getItem('token'));
+    const isNotLogged = isExpired(localStorage.getItem('token'));
+
     return (
         <div className="container">
             <Logo/>
             <Search/>
-            <Signup/>
+            {isNotLogged && <SignupBtn/>}
+            {!isNotLogged && <LogoutBtn/>}
         </div>
     );
 };

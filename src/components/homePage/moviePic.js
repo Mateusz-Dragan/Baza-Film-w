@@ -1,15 +1,14 @@
-import React from 'react'
+import React, {Component} from 'react'
 import movie from "../images/movie2.jpg"
 import '../homePage/styles/movieStyles.css'
 
-function MoviePic() {
+class MoviePic extends Component{
 
-
-    return (
-        <img src={movie} alt="movie"/>
-    );
-
-
+    render(){
+        return (
+            <img className="image" src={this.props.image} alt="movie"/>
+        );
+    }
 }
 
 export default MoviePic;

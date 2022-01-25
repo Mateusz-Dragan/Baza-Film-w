@@ -9,8 +9,13 @@
     transition: transform .2s;
     height: 330px;
     text-decoration: none;
+    width: 250px;
 }
 
+.image{
+    height: 325px;
+    width: 350px;
+}
 .movieContainer {
     padding: 15px;
 }
@@ -25,4 +30,7 @@
 .description {
     text-align: left;
     color: white;
+    overflow-y: scroll;
+    height: 25vh;
+    width: 18vh;
 }

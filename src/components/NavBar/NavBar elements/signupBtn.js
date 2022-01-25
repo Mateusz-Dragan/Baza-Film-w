@@ -1,10 +1,9 @@
 import React from "react";
 import {BrowserRouter, Link} from "react-router-dom";
-import "../styles/signup.css";
+import "../styles/signupBtn.css";
 
-function Signup() {
+function SignupBtn() {
     return (
-
         <BrowserRouter>
             <Link to
                   className="signup"
@@ -14,8 +13,7 @@ function Signup() {
                 Create an account
             </Link>
         </BrowserRouter>
-
     );
 }
 
-export default Signup;
+export default SignupBtn;
