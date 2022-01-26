@@ -1,9 +1,10 @@
 import React, {Component, useEffect, useState} from "react";
 import "./styles/movie.css";
 import {useParams} from "react-router-dom";
+import noImage from "./images/no-images.png";
 
-const Movie=() =>{
-    let { id } = useParams();
+const Movie = () => {
+    let {id} = useParams();
     const [title, setTitle] = useState("");
     const [image, setImage] = useState("");
     const [content, setContent] = useState("");
@@ -16,23 +17,27 @@ const Movie=() =>{
             setImage(json.image);
             setContent(json.content);
         });
-        return (
-            <div className="movieDetailsContainer">
-                <div className="detailsContainer">
-                    <div className="titleContainer">
-                        <p className="title">{title}</p>
-                    </div>
-                    <div className="pic">
-                        <img src={image} alt="movie"/>
-                    </div>
-                    <div className="descriptionContainer">
-                        <p className="details">{content}</p>
-                    </div>
+
+    if (!image.match(/(jpg|jpeg|png|gif)/)) {
+        setImage(noImage)
+    }
+    return (
+        <div className="movieDetailsContainer">
+            <div className="detailsContainer">
+                <div className="titleContainer">
+                    <p className="title">{title}</p>
+                </div>
+                <div className="pic">
+                    <img src={image} alt="movie"/>
+                </div>
+                <div className="descriptionContainer">
+                    <p className="details">{content}</p>
                 </div>
             </div>
+        </div>
 
-        );
-    }
+    );
+}
 
 
 export default Movie;

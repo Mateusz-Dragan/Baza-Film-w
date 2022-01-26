@@ -4,6 +4,7 @@ import "./styles/signup.css";
 
 function AddMovieBtn() {
     return (
+        <BrowserRouter>
             <Link to
                   className="addButton"
                   onClick={() => {
@@ -11,6 +12,7 @@ function AddMovieBtn() {
                   }}>
                 Add a movie
             </Link>
+        </BrowserRouter>
     );
 }
 

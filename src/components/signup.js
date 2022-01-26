@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./styles/signup.css"
 import {Link} from "react-router-dom";
+
 const axios = require('axios');
 
 
@@ -16,7 +17,7 @@ class SignUp extends Component {
     };
 
     handleChangeRoute = () => {
-        this.props.history.push('/');
+        this.props.history.push('/signin');
         window.location.reload();
     };
 

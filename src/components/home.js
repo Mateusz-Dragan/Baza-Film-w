@@ -2,14 +2,13 @@ import React, {Component} from "react";
 import {Row, Col} from "react-bootstrap";
 import "../components/styles/home.css"
 import MovieContainer from "./homePage/movieContainer";
-import AddMovieBtn from "./addMovieBtn";
 import {isExpired} from "react-jwt";
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.isNotLogged = isExpired(localStorage.getItem('token'));
-        this.state ={
+        this.state = {
             movieList: [],
             isLoaded: false,
         }
@@ -28,22 +27,23 @@ class Home extends Component {
 
 
     render() {
-        const { isLoaded, movieList } = this.state;
-        for(let i=0;i<movieList.length;i++){
-            if(movieList[i].title === undefined || movieList[i].content === undefined || movieList[i].image === undefined){
-                movieList.splice(i,1)
+        const {isLoaded, movieList} = this.state;
+
+        for (let i = 0; i < movieList.length; i++) {
+            if (movieList[i].title === undefined || movieList[i].title.length < 3) {
+                movieList.splice(i, 1)
                 i--;
             }
         }
         return (
             <div className="movieContainer">
-                {!this.isNotLogged && <AddMovieBtn/>}
                 {isLoaded && <Row>
                     <React.Fragment>
                         <div className="contents">
                             {movieList.reverse().map((movie) => (
                                 <Col xs={6} md={12}>
-                                <MovieContainer title={movie.title} content={movie.content} image={movie.image} id={movie.id} />
+                                    <MovieContainer title={movie.title} content={movie.content} image={movie.image}
+                                                    id={movie.id}/>
                                 </Col>
                             ))}
                         </div>

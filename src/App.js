@@ -23,16 +23,34 @@ function App() {
                     <Switch>
                         <Route exact path='/' component={Home}
                                render={props => {
-                            if (isExpired(localStorage.getItem('token'))) {
-                                return <Redirect to="/" />;
-                            }
-                            return <Login/>;
-                        }}
+                                   if (isExpired(localStorage.getItem('token'))) {
+                                       return <Redirect to="/"/>;
+                                   }
+                                   return <Login/>;
+                               }}
                         />
-                        <Route path='/signup' component={SignUp}/>
-                        <Route path='/signin' component={Login}/>
+                        <Route path='/signup'
+                               render={props => {
+                                   if (!isExpired(localStorage.getItem('token'))) {
+                                       return <Redirect to="/"/>;
+                                   }
+                                   return <Route path="/signup" exact component={SignUp}/>;
+                               }}/>
+                        <Route path='/signin'
+                               render={props => {
+                                   if (!isExpired(localStorage.getItem('token'))) {
+                                       return <Redirect to="/"/>;
+                                   }
+                                   return <Route path="/signin" exact component={Login}/>;
+                               }}/>
                         <Route path='/details/:id' component={Movie}/>
-                        <Route path='/add' component={AddMovie}/>
+                        <Route path='/add'
+                               render={props => {
+                                   if (isExpired(localStorage.getItem('token'))) {
+                                       return <Redirect to="/"/>;
+                                   }
+                                   return <Route path="/add" exact component={AddMovie}/>;
+                               }}/>
                         <Route path='/not_found' component={NotFound}/>
                         {<Route path="*" component={NotFound}/>}
                     </Switch>

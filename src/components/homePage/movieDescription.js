@@ -3,7 +3,7 @@ import '../homePage/styles/movieStyles.css'
 
 class MovieDescription extends Component {
 
-    render(){
+    render() {
         return (<div className="movieContainer">
             <div className="movieTitle">{this.props.title}</div>
             <br/>
@@ -11,7 +11,6 @@ class MovieDescription extends Component {
             </div>
         </div>);
     }
-
 
 
 }

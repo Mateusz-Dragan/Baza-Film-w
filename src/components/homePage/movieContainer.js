@@ -5,7 +5,9 @@ import '../homePage/styles/movieStyles.css'
 import {Link} from "react-router-dom";
 
 class MovieContainer extends Component {
+
     render() {
+
         const url = "details/" + this.props.id;
         return (
             <Link to className="movie"
