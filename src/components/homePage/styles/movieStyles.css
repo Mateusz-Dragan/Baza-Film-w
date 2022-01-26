@@ -9,12 +9,12 @@
     transition: transform .2s;
     height: 330px;
     text-decoration: none;
-    width: 250px;
+    width: 410px;
 }
 
 .image{
     height: 325px;
-    width: 350px;
+    width: 200px;
 }
 .movieContainer {
     padding: 15px;
@@ -23,14 +23,17 @@
 .movieTitle {
     text-align: left;
     font-size: 21px;
-    color: white;
     font-weight: 700;
+    color: white;
+    height: 60px;
+    overflow-y: scroll;
 }
 
 .description {
     text-align: left;
     color: white;
     overflow-y: scroll;
-    height: 25vh;
+    height: 20vh;
     width: 18vh;
 }
+::-webkit-scrollbar {display:none;}

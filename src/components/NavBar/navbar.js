@@ -5,6 +5,7 @@ import Logo from "./NavBar elements/logo";
 import SignupBtn from "./NavBar elements/signupBtn";
 import LogoutBtn from "./NavBar elements/logoutBtn";
 import { isExpired, decodeToken  } from "react-jwt";
+import LoginBtn from "./NavBar elements/loginBtn";
 
 const Navbar = (props) => {
 
@@ -15,7 +16,7 @@ const Navbar = (props) => {
         <div className="container">
             <Logo/>
             <Search/>
-            {isNotLogged && <SignupBtn/>}
+            {isNotLogged && <div><LoginBtn/> <SignupBtn/></div>}
             {!isNotLogged && <LogoutBtn/>}
         </div>
     );

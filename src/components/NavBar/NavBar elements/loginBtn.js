@@ -2,23 +2,18 @@ import React from "react";
 import {BrowserRouter, Link} from "react-router-dom";
 import "../styles/signupBtn.css";
 
-function LogoutBtn() {
-
-
+function LoginBtn() {
     return (
-
         <BrowserRouter>
             <Link to
                   className="signup"
                   onClick={() => {
-                      localStorage.removeItem('token')
-                      window.location.href = "/";
+                      window.location.href = "/signin";
                   }}>
-                Log Out
+                Log in
             </Link>
         </BrowserRouter>
-
     );
 }
 
-export default LogoutBtn;
+export default LoginBtn;

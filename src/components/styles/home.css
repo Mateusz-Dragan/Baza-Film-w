@@ -13,8 +13,7 @@
     grid-template-columns: 15rem 15rem 15rem 15rem;
     grid-template-rows: 22rem 22rem;
     row-gap: 2rem;
-    column-gap: 5rem;
-    justify-content: space-evenly;
+    column-gap: 13rem;
     align-items: center;
     width: 100%;
     min-height: 43rem;

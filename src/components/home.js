@@ -26,15 +26,22 @@ class Home extends Component {
             });
     }
 
+
     render() {
         const { isLoaded, movieList } = this.state;
+        for(let i=0;i<movieList.length;i++){
+            if(movieList[i].title === undefined || movieList[i].content === undefined || movieList[i].image === undefined){
+                movieList.splice(i,1)
+                i--;
+            }
+        }
         return (
             <div className="movieContainer">
                 {!this.isNotLogged && <AddMovieBtn/>}
                 {isLoaded && <Row>
                     <React.Fragment>
                         <div className="contents">
-                            {movieList.map((movie) => (
+                            {movieList.reverse().map((movie) => (
                                 <Col xs={6} md={12}>
                                 <MovieContainer title={movie.title} content={movie.content} image={movie.image} id={movie.id} />
                                 </Col>

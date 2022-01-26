@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./styles/signup.css"
-import {BrowserRouter, Link} from "react-router-dom";
-import axios from "axios";
+import {Link} from "react-router-dom";
+const axios = require('axios');
 
 
 class SignUp extends Component {
@@ -88,15 +88,6 @@ class SignUp extends Component {
                             placeholder="Username"/>
                         {this.state.errors.username &&
                         <div className="alert alert-danger">{this.state.errors.username}</div>}
-                    </div>
-                    <div>
-                        <label>Name</label>
-                        <input
-                            name="username"
-                            type="text"
-                            className="form-control"
-                            id="name"
-                            placeholder="Name"/>
                     </div>
                     <div>
                         <label>Email address</label>

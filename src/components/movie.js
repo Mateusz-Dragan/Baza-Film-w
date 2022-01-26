@@ -1,6 +1,5 @@
 import React, {Component, useEffect, useState} from "react";
 import "./styles/movie.css";
-import movie from "./images/movie2.jpg"
 import {useParams} from "react-router-dom";
 
 const Movie=() =>{
@@ -28,9 +27,6 @@ const Movie=() =>{
                     </div>
                     <div className="descriptionContainer">
                         <p className="details">{content}</p>
-                    </div>
-                    <div className="ratingContainer">
-                        <p className="rating">Rating: ?/10</p>
                     </div>
                 </div>
             </div>
